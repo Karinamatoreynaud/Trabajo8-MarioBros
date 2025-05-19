@@ -1,5 +1,6 @@
 
 let personajeActual = null; // bonus
+let personajeAnterior = null; // bonus
 
 const botonPresentar = document.querySelector('.btn'); // parte cinco
 
@@ -59,13 +60,15 @@ botonPresentar.addEventListener('click', function() { // parte seis
     
     if (personajeValido && personajeElegido) {
         // const idPersonaje = personajeElegido.toLowerCase();
-        if (personajeActual) {
-            personajeActual.style.display = "none"; // bonus ocultar
+        const elementoPersonaje1 = document.getElementById(personajeAnterior);
+        if (elementoPersonaje1) {
+            // personajeActual.style.display = "none"; // bonus ocultar ocultado recien
+            elementoPersonaje1.setAttribute("title", "");
         }
         const elementoPersonaje = document.getElementById(idPersonaje);
         if (elementoPersonaje) {
             elementoPersonaje.setAttribute("title", "Presentado");
-            elementoPersonaje.style.display = "block"; // bonus mostrar
+            // elementoPersonaje.style.display = "block"; // bonus mostrar ocultado recien
 
             personajeActual = elementoPersonaje; // bonus
             console.log(`Se ha presentado: ${idPersonaje}`);
@@ -73,13 +76,6 @@ botonPresentar.addEventListener('click', function() { // parte seis
             console.log(`No se encontró un elemento con ID: ${idPersonaje}`);
         }
     }
+    personajeAnterior = idPersonaje;
 });
 
-/* 
-Me gustaría poder tener una corrección y explicacin de cómo se realiza
-correctamente el bonus punto 1 y 2.
-En el punto uno me pasa que no me doy cuenta cómo ocultar la cortina y no el div entero,
-porque al presentar un nuevo personaje, me saca la caja del anteriormente mostrado.
-También, cómo debería haber hecho el display none si fuese hecho directamente en CSS
-y no desde el archivo js, y llamarlo desde ahí.
-*/    
