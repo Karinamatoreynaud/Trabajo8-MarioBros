@@ -79,3 +79,8 @@ botonPresentar.addEventListener('click', function() { // parte seis
     personajeAnterior = idPersonaje;
 });
 
+/*
+Me gustaria saber si podrian guiarme con el modo de hacer correctamente el bonus parte dos, para entender bien la logica,
+y cómo debería haber hecho el array para sustituir el switch.
+Gracias.
+*/
